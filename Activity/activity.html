@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="shortcut icon" href="https://miro.medium.com/v2/resize:fit:640/0*ngAthWxOvKZHvsw9" type="image/x-icon">
+    <title>Website Alert</title>
+    <script>
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        function showMobileAlert() {
+            if (isMobileDevice()) {
+                alert("You are accessing this website from a mobile device. For the best experience, switch to desktop mode. ☺️");
+            }
+        }
+    </script>
+</head>
+<body onload="showMobileAlert()">
+    <header>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="../Home/index.html">Home</a>
+                <a href="../About/about.html">About Us</a>
+                <a href="">Activity</a>
+                <a href="../Team/team.html">Core Team!</a>
+                <a href="../Join Us/join.html">Join Us</a>
+            </div>
+        </div>
+    </header>
+    <div class="news-container">
+        <div class="title">
+            Events
+        </div>
+        <ul>
+            <li>Poster Design</li>
+            <li>Cyber Challenges</li>
+            <li>Ethical Hacking tutorials</li>
+            <li>Apply specialist security</li>
+            <li>Install firewalls</li>
+            <li>Prevent data loss</li>
+            <li>Security architecture</li>
+        </ul>
+    </div>
+    <section class="activity" id="activity">
+        <h1>Want new Activities? Coming Soon...</h1>
+        <h2>Till then Keep Patience!🤖✌️</h2>
+        <div class="content">
+            <h1>Try <span></span>Learn</h1>
+            <div class="container">
+                <div class="box">
+                    <h2>Poster Design</h2>
+                    <p>Design a Poster <br> Hacking Theme.</p>
+                </div>
+                <div class="box">
+                    <h2>Try Hack Me!</h2>
+                    <p>Try to complete the challenges within tryhackme!</p>
+                </div>
+                <div class="box">
+                    <h2>Knowledge</h2>
+                    <p>Gain Knowledge about phising attacks!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+        window.onscroll = () => {
+            menuBtn.classList.remove('active');
+            navigation.classList.remove('active');
+        }
+        
+        const btns = document.querySelectorAll(".nav-btn");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn)=> {
+                btn.classList.remove("active");
+            })
+
+            btns[manual].classList.add("active");
+        }
+
+        btns.forEach((btn,i)=> {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+</html>

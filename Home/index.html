@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="shortcut icon" href="https://miro.medium.com/v2/resize:fit:640/0*ngAthWxOvKZHvsw9" type="image/x-icon">
+    <link href="https://db.onlinewebfonts.com/c/6a85b1646cad955807f12722ecd39ed3?family=Blaze+ITC+Italic" rel="stylesheet">
+    <title>Website Alert</title>
+    <script>
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        function showMobileAlert() {
+            if (isMobileDevice()) {
+                alert("You are accessing this website from a mobile device. For the best experience, switch to desktop mode. ☺️");
+            }
+        }
+    </script>
+</head>
+<body onload="showMobileAlert()">
+    <header>
+        <div class="headerLeft">
+            <img src="./assest/lloll copy.png" alt="Logo" class="logo">
+            <a href="#" class="title">C y b e r &nbsp; S l e u t h s</a>
+        </div>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="">Home</a>
+                <a href="../About/about.html">About Us</a>
+                <a href="../Activity/activity.html">Activity</a>
+                <a href="../Team/team.html">Core Team!</a>
+                <a href="../Join Us/join.html">Join Us</a>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+        <video class="video-slide active" src="./assest/1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="./assest/5.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="./assest/2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="./assest/3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="./assest/4.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>What is<br> <span>Cyber Sleuths?</span></h1>
+            <p>Cyber Sleuths serves as the recognized cybersecurity club at Dr. B.C. Roy Engineering College, functioning within the CSE department. This club holds significant potential to excel and drive transformation within the realm of cybersecurity. Our journey is set to commence on October 3rd. We invite you to join us and become a part of our pursuit of success in the future!</p>
+            <a href="../Join Us/join.html">Register Now!</a>
+            <a href="https://www.isoeh.com/all-courses.html">Check Out Courses!</a>
+        </div>
+        <div class="content">
+            <h1>Dr. B.C Roy Engineering College <span></span></h1>
+            <p>It was established in the year 2000 and is one of the best engineering and Management colleges in Eastern India. BCREC has received the ‘Education Excellence 2019 Award in Engineering’ award from renowned Bengali News Channel, and ‘The Best Emerging Engineering College in India’ in 2018 by Today Research and Ratings (TRR).</p>
+            <h1>Computer Science & Engineering<span></span></h1>
+            <p>The Computer Science and Engineering department of Dr. B.C. Roy Engineering College,Durgapur excels in academics, hands-on learning, and innovation. With NBA accreditation, our expert faculty, cutting-edge resources, and interdisciplinary approach prepare students for success in the field of computer science and engineering. Many graduates launch their own ventures or conduct groundbreaking research, reflecting our emphasis on entrepreneurship and community engagement. Moreover, the department consistently encourages the adoption and exploration of the latest technologies, ensuring our students stay at the forefront of advancements in the rapidly evolving world of computer science and engineering.</p>
+        </div>
+        <div class="content">
+            <h1>Why Cyber<br> <span> Security?</span></h1>
+            <p>Explore the Critical Need for Cybersecurity.
+                Understanding the "why" behind cybersecurity is of the utmost importance in an era where digital risks exist around every corner. Learn why it's important to defend your identity and maintain trust in the digital world in addition to protecting important data. Discover the compelling reasons why you should join our cybersecurity community and contribute to the solution.</p>
+            <a href="https://www.upguard.com/blog/cybersecurity-important">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Data Privacy<br> <span>and Protection</span></h1>
+            <p>Guarding Your Digital Footprint Your data is not just a collection of ones and zeros, it is your life's work, your memories, your dreams. In today's digital age, protecting your sensitive information is more important than ever. Let us guide you on a journey of discovery and empowerment as we explore the world of data privacy and security. With the right knowledge and best practices, you can take control of your digital life and safeguard your most valuable asset. Join us now and be inspired to protect what matters most.</p>
+            <a href="https://cloudian.com/guides/data-protection/data-protection-and-privacy-7-ways-to-protect-user-data/#:~:text=Data%20privacy%20is%20focused%20on,users%20don't%20have%20access.">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Cyber Best<br> <span></span>Practices</h1>
+            <p>Stay Safe Online with Proven Tips Our primary goal is to empower individuals to navigate the digital world with confidence and security. We believe that everyone deserves to feel safe and protected online, and we're committed to making that a reality. By providing a comprehensive set of cybersecurity best practices, we aim to equip our participants with the knowledge and skills they need to defend themselves against potential cyber threats.</p>
+            <a href="https://www.ekransystem.com/en/blog/best-cyber-security-practices">Read More</a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+        window.onscroll = () => {
+            menuBtn.classList.remove('active');
+            navigation.classList.remove('active');
+        }
+        
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn)=> {
+                btn.classList.remove("active");
+            })
+
+            slides.forEach((slide)=> {
+                slide.classList.remove("active");
+            })
+
+            contents.forEach((content)=> {
+                content.classList.remove("active");
+            })
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn,i)=> {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+    <footer class="footer">
+        <img src="./assest/bcrecLogo.png" alt="bcrecLogo" srcset="">
+        <div class="footer-text">
+            <p>Developed Inside BCREC, Durgapur || All Right Reserved © 2023 || <a href="https://github.com/Parthmagicss"><i class="fab fa-github"></i></a></p>
+        </div>
+     </footer>
+</body>
+</html>

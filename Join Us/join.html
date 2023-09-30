@@ -1,0 +1,167 @@
+<html>
+<head>
+    <title>Credentials</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://miro.medium.com/v2/resize:fit:640/0*ngAthWxOvKZHvsw9" type="image/x-icon">
+    <title>Website Alert</title>
+    <script>
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        function showMobileAlert() {
+            if (isMobileDevice()) {
+                alert("You are accessing this website from a mobile device. For the best experience, switch to Desktop Mode. ☺️");
+            }
+        }
+    </script>
+</head>
+<body onload="showMobileAlert()">
+    <header>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="../Home/index.html">Home</a>
+                <a href="../About/about.html">About Us</a>
+                <a href="../Activity/activity.html">Activity</a>
+                <a href="../Team/team.html">Core Team!</a>
+                <a href="">Join Us</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="form">
+            <h2 class="form-title">Student Details</h2>
+            <form id="mainForm">
+                <div class="main-user-info">
+                <div class="user-input-box">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" value="" id="name" 
+                    placeholder="Enter Full Name" required/>
+                </div>
+                <div class="user-input-box">
+                    <label for="email">E-Mail</label>
+                    <input type="email" value="" id="email" 
+                    name="email"
+                    placeholder="Enter Email" required/>
+                </div>
+                <div class="user-input-box">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="number" value="" id="phone" 
+                    placeholder=" Enter Number" required/>
+                </div>
+                <div class="user-input-box">
+                    <label for="universityroll">University Roll</label>
+                    <input type="number" value="" id="roll" 
+                    placeholder="Enter Roll" required/>
+                </div>
+                <div class="user-input-box">
+                    <label for="year">Acedemic Year</label>
+                    <input type="number" value="" id="year" 
+                    placeholder="Enter Year" required/>
+                </div>
+                <div class="user-input-box">
+                    <label for="Department">Department</label>
+                    <input type="text" value="" id="dept" 
+                    placeholder="Enter Department" required/>
+                </div>
+                <div class="form-submit-btn">
+                    <input type="submit" id="submit" value="Submit Response"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module">
+        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC3XT8RhEdO3zPR3qa_LJS5e6fIxQZhMxk",
+            authDomain: "cybersuit-281bb.firebaseapp.com",
+            projectId: "cybersuit-281bb",
+            storageBucket: "cybersuit-281bb.appspot.com",
+            messagingSenderId: "283576340017",
+            appId: "1:283576340017:web:8fc49a01e2dc286f9d4f10"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+       
+       /*
+        document.getElementById("submit").addEventListener('click', function (e) {
+            e.preventDefault();
+            set(ref(db, 'user/' + document.getElementById("name").value),
+            data);
+            alert("Login Sucessfull 💯");
+        })     
+        */ // document.getElementById("submit").addEventListener('click', function (e) {
+        // })
+        function submitForm(e){
+            e.preventDefault();
+            const data ={
+                Name: document.getElementById("name").value,
+                Email: document.getElementById("email").value,
+                PhoneNumber: document.getElementById("phone").value,
+                UniversityRoll: document.getElementById("roll").value,
+                Year: document.getElementById("year").value,
+                Department: document.getElementById("dept").value
+            };
+            if(data.Name.length>0 && data.Email.length>0 && data.PhoneNumber.length>0 && data.UniversityRoll.length>0 && data.Year.length>0 && data.Department.length>0){
+                set(ref(db, 'user/' + document.getElementById("name").value+ document.getElementById("roll").value),
+            data);
+            alert("Registration Sucessfull 💯");
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("roll").value = "";
+            document.getElementById("year").value = "";
+            document.getElementById("dept").value = "";
+            }
+            else{
+                alert("Fill all the necessary details");
+            }
+        }
+        document.getElementById('mainForm').addEventListener('submit',submitForm);
+    </script>
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+        window.onscroll = () => {
+            menuBtn.classList.remove('active');
+            navigation.classList.remove('active');
+        }
+        
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn)=> {
+                btn.classList.remove("active");
+            })
+
+            slides.forEach((slide)=> {
+                slide.classList.remove("active");
+            })
+
+            contents.forEach((content)=> {
+                content.classList.remove("active");
+            })
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn,i)=> {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+</html>

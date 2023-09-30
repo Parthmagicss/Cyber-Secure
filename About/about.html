@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://miro.medium.com/v2/resize:fit:640/0*ngAthWxOvKZHvsw9" type="image/x-icon">
+    <title>Website Alert</title>
+    <script>
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        function showMobileAlert() {
+            if (isMobileDevice()) {
+                alert("You are accessing this website from a mobile device. For the best experience, switch to desktop mode. ☺️");
+            }
+        }
+    </script>
+</head>
+<body onload="showMobileAlert()">
+    <header>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="../Home/index.html">Home</a>
+                <a href="">About Us</a>
+                <a href="../Activity/activity.html">Activity</a>
+                <a href="../Team/team.html">Core Team!</a>
+                <a href="../Join Us/join.html">Join Us</a>
+            </div>
+        </div>
+    </header>
+    <section class="about" id="about">
+        <div class="content">
+            <h1>About<span> Us!</span></h1>
+            <div class="container">
+                <div class="box">
+                    <h2>Vision</h2>
+                    <p>Our vision is to create "The Cyber Renegades" as a prominent student organisation in the field of cybersecurity, known for its dedication to excellence, creativity, and community service. We hope to inspire and educate the next generation of cybersecurity professionals who will define our digital world's future.</p>
+                </div>
+        
+                <div class="box">
+                    <h2>Mission</h2>
+                    <p>Our mission is to create a welcoming and inclusive community for all students interested in cybersecurity, regardless of their background or level of expertise. We aim to provide -<br> 
+                        * Educational resources<br>
+                        * hands-on training<br>
+                        * Networking opportunities<br>
+                        </p>
+                </div>
+        
+                <div class="box">
+                    <h2>Goals</h2>
+                    <p>We aim to:
+                    Our cybersecurity club has clear goals. We educate members through workshops, talks, and online resources. We provide hands-on training in areas like penetration testing and ethical hacking. Networking is key, connecting members with professionals, employers, and peers. We use the Project Lab and collect a nominal fee to support our mission.<br></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+        window.onscroll = () => {
+            menuBtn.classList.remove('active');
+            navigation.classList.remove('active');
+        }
+        
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn)=> {
+                btn.classList.remove("active");
+            })
+
+            slides.forEach((slide)=> {
+                slide.classList.remove("active");
+            })
+
+            contents.forEach((content)=> {
+                content.classList.remove("active");
+            })
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn,i)=> {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+</html>
